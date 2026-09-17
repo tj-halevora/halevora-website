@@ -1,0 +1,16 @@
+node_modules/
+.next/
+out/
+dist/
+.vercel/
+.env*
+!.env.example
+*.log
+*.tsbuildinfo
+
+.vercel
+.env*
+
+# Local source-media archives and visual QA (runtime assets are in public/)
+design-references/
+media/

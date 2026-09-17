@@ -46,13 +46,14 @@ section[id]{scroll-margin-top:calc(var(--header-height) + 28px)}
 .header-nav,.header-links{display:flex;align-items:center;gap:22px}.header-links{gap:16px}
 .header-links>a,.services-trigger{font-size:13px;white-space:nowrap}.header-links>a{display:flex;align-items:center;min-height:48px}
 .nav-word{position:relative;display:inline-block;padding:5px 3px}
-.nav-highlight{position:absolute;inset:0;padding:5px 3px;background:#A995C9;color:#232323;clip-path:inset(0 100% 0 0);pointer-events:none}
+.nav-highlight{position:absolute;inset:0;padding:5px 3px;background:#A995C9;color:#fff;clip-path:inset(0 100% 0 0);pointer-events:none}
 .nav-section-highlight{transition:clip-path .3s}
 [aria-current=location] .nav-section-highlight,.services-trigger[data-active=true] .nav-section-highlight{clip-path:inset(0)}
-.header-contact{display:flex;gap:26px;align-items:center;position:relative;isolation:isolate;overflow:hidden;background:#A995C9;color:#232323;padding:12px 18px;font:12px var(--font-main);text-transform:uppercase}
+.header-contact{display:flex;gap:26px;align-items:center;position:relative;isolation:isolate;overflow:hidden;background:#A995C9;color:#fff;padding:12px 18px;font:12px var(--font-main);text-transform:uppercase}
+.header-contact:is(:hover,:focus-visible){color:#232323}
 .apply-slide{position:absolute;inset:0;background:#f7f5ef;z-index:-1;clip-path:inset(0 100% 0 0)}
 .site-header:is([data-scrolled=true],:has(.header-mobile[open]),:has(.header-services[data-open=true])) .apply-slide{background:#58436F}
-.site-header:is([data-scrolled=true],:has(.header-mobile[open]),:has(.header-services[data-open=true])) .header-contact:is(:hover,:focus-visible){color:#f7f5ef}
+.site-header:is([data-scrolled=true],:has(.header-mobile[open]),:has(.header-services[data-open=true])) .header-contact:is(:hover,:focus-visible){color:#fff}
 .header-contact:focus-visible .apply-slide{clip-path:inset(0)}
 .header-services{display:flex;align-items:center;position:relative}
 .services-trigger{display:flex;align-items:center;padding:0;min-height:48px;border:0;color:inherit;background:transparent}
@@ -218,7 +219,7 @@ section[id]{scroll-margin-top:calc(var(--header-height) + 28px)}
 .contact-action-fill{position:absolute;inset:0;z-index:-1;background:#A995C9;clip-path:inset(0 100% 0 0)}
 .contact-action-arrow{font:20px/1 var(--font-main)}.contact-action:focus-visible .contact-action-fill{clip-path:inset(0)!important}
 .h-form-note{font-size:12px;line-height:1.5;color:#909891;margin:14px 0 0}
-.contact-panel{padding:32px;border:1px solid #A995C926;background:rgb(12 12 12 / 65%);align-self:start}
+.contact-panel{padding:32px;border:1px solid #A995C926;background:#000;align-self:start}
 .contact-email{font-size:clamp(18px,1.7vw,25px);letter-spacing:-.045em;overflow-wrap:anywhere;padding-bottom:6px;border-bottom:1px solid #A995C970}
 .contact-careers{margin-top:54px;padding-top:30px;border-top:1px solid #ffffff20}
 .contact-careers>p:not(.h-eyebrow){color:#a9aaa8;font-size:16px;line-height:1.5;margin:0 0 25px}.contact-careers h3{margin-bottom:16px}
@@ -258,3 +259,9 @@ section[id]{scroll-margin-top:calc(var(--header-height) + 28px)}
 
 /* A fine violet contour follows only the enlarged glyphs. */
 .liquid-heading canvas.letter-pulse-outline{filter:drop-shadow(0 0 2px #a368ef) drop-shadow(0 0 5px #9b55ee);pointer-events:none}
+
+/* Keep form content legible against dark controls on the cream page. */
+.creator-application :is(input,select,textarea){color:#fff;caret-color:#fff;color-scheme:dark}
+.creator-application :is(input,textarea)::placeholder{color:#fff;opacity:1}
+.creator-application select option{background:#232323;color:#fff}
+.creator-application :is(input,textarea):-webkit-autofill{-webkit-text-fill-color:#fff;caret-color:#fff;box-shadow:0 0 0 1000px #3e3e3c inset}

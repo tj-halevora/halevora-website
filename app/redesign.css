@@ -276,3 +276,7 @@
   .h-network-connectors-8{display:block}
   .h-network-connectors-4{display:none}
 }
+
+/* Brand-colored footer mark on the cream background. */
+.h-footer-brand .h-footer-logo{display:block;width:44px;aspect-ratio:64/60;background:#A995C9;mask:url(/halevora-logo.svg) center/contain no-repeat;-webkit-mask:url(/halevora-logo.svg) center/contain no-repeat}
+@media(max-width:700px){.h-footer-brand .h-footer-logo{width:34px}}

@@ -21,17 +21,23 @@ export default function Approach() {
     media.add('(min-width:1280px) and (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference)', () => {
       const root = process.current;
       const rows = Array.from(root.children);
-      const timeline = gsap.timeline({scrollTrigger: {
-        trigger: root.closest('section'), start: 'top 75%',
-        toggleActions: 'play none none none', once: true, invalidateOnRefresh: true,
-      }});
-      gsap.set(root, { '--process-progress': '0px' });
-      timeline.fromTo(rows, { opacity: 0, y: 18 }, {
-        opacity: 1, y: 0, duration: .35, stagger: .07, ease: 'power2.out',
-      }, 0);
-      timeline.to(root, {
-        '--process-progress': () => `${rows.at(-1).offsetTop}px`, duration: .56, ease: 'power1.out',
-      }, 0);
+      rows.forEach(row => {
+        gsap.fromTo(row, { opacity: 0, y: 42 }, {
+          opacity: 1, y: 0, ease: 'none',
+          scrollTrigger: {
+            trigger: row, start: 'top 90%', end: 'top 65%',
+            scrub: .45, invalidateOnRefresh: true,
+          },
+        });
+      });
+      gsap.fromTo(root, { '--process-progress': '0px' }, {
+        '--process-progress': () => `${rows.at(-1).offsetTop}px`, ease: 'none',
+        scrollTrigger: {
+          trigger: root, start: 'top 75%',
+          end: () => `+=${rows.at(-1).offsetTop}`,
+          scrub: .45, invalidateOnRefresh: true,
+        },
+      });
     });
     return () => media.revert();
   }, { scope: process });

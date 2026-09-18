@@ -330,3 +330,34 @@ Published current workspace including user's other-chat changes to production. L
 
 ## GitHub handoff
 Project now initialized as a Git repository on main. Origin: https://github.com/tj-halevora/halevora-website.git . Required runtime assets are in public/. Local reference archives, media/, .env files, .vercel, dependencies and build output are ignored. Supersedes earlier notes saying no Git repository. GitHub publication alone does not connect Vercel Git integration.
+
+### September 18 pillar glow
+- Added brand-amethyst aura behind Represent/Engineer/Distribute cards, violet borders and soft shadows. Desktop aura gently breathes; mobile and reduced-motion use static glow. Visually checked, build passes. Local only, not deployed.
+
+
+- Pillar glow intensified at user request: larger halo coverage, near-full violet opacity, and three stronger shadow layers extending 58px. Breath minimum raised to .88 so glow stays visible. Build passes; local only.
+
+
+### Service selection and glow
+- Selected service tabs now keep white text/arrows and soft-white numbers on the brand-violet background. Service showcase gets the same strong three-layer violet outer glow as the pillar cards. Build passes; local only.
+
+
+### Faster platform loop
+- Platform highlight now advances every 800ms (previously 2 seconds); full eight-card loop takes 6.4 seconds. Manual interaction pause shortened from 4 seconds to 1.8 seconds. Visibility/reduced-motion handling preserved. Build passes; local only.
+
+
+- Added matching strong brand-violet border/glow around the Halevora Result (.h-network-output) box. Build passes; local only.
+
+
+- Added matching strong violet border and three-layer glow to the Distribution Cycle chart and all three Reach statistic cards. Build passes; local only.
+
+
+- Added matching strong violet outer glow to the full distribution map/statistics panel, preserving its cream background and map contrast. Build passes; local only.
+
+
+- Added matching strong brand-violet border/glow around the paid-media dashboard. Build passes; local only.
+
+
+### Approach sequential scroll reveal (latest override)
+- Replaced the fast automatic four-row reveal with individual scroll-scrubbed fade/rise effects. Each row reveals from top 90% to top 65% with .45s smoothing; violet progress line draws with scroll. Reverses on upward scroll. Mobile/reduced motion retain fully visible content. Verified sequential opacity progress and build passes. Local only.
+

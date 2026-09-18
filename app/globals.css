@@ -139,7 +139,7 @@ section[id]{scroll-margin-top:calc(var(--header-height) + 28px)}
 @media(max-width:600px){.services-core{grid-template-columns:1fr}.core-service-card{padding:24px}}
 
 /* Distribution */
-.distribution-details{background:#f7f5ef;border:1px solid #A995C94d;color:#232323}
+.distribution-details{background:#f7f5ef;border:1px solid color-mix(in srgb,var(--h-accent) 65%,transparent);color:#232323;box-shadow:0 0 12px #A995C9aa,0 0 32px #A995C999,0 16px 58px #A995C999}
 .network-map-visual{padding:35px 30px 0;background:radial-gradient(ellipse,#A995C907,transparent 70%)}
 .network-map{width:100%;height:auto;overflow:visible}.network-marker{cursor:help;outline:none}
 .network-marker>circle:first-child{animation:map-pulse 3s ease-in-out infinite;transform-box:fill-box;transform-origin:center}

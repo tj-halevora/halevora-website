@@ -11,7 +11,7 @@ export default function PlatformNetwork() {
   const machine = useRef(null);
   const pauseUntil = useRef(0);
   function selectPlatform(index){
-    pauseUntil.current=Date.now()+4000;
+    pauseUntil.current=Date.now()+1800;
     setActive(index);
   }
   useEffect(()=>{
@@ -26,7 +26,7 @@ export default function PlatformNetwork() {
         // Let the existing platform assembly finish before cycling its final tiles.
         if(Number(getComputedStyle(tiles.firstElementChild).opacity)<.95)return;
         setActive(index=>(index+1)%offerings.length);
-      },2000);
+      },800);
     }
     const observer=new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;sync();},{threshold:.2});
     observer.observe(tiles);
